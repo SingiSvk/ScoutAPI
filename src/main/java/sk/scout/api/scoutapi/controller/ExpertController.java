@@ -9,31 +9,31 @@ import sk.scout.api.scoutapi.request.ExpertJsonRequest;
 
 import java.util.Optional;
 
-@RequestMapping("/program")
+@RequestMapping("/program/expert")
 @RestController
-public class ProgramController {
+public class ExpertController {
 
     @Autowired
     ExpertRepository expertRepository;
 
-    @GetMapping("/expert/{id}")
+    @GetMapping("/{id}")
     public Optional<Expert> getExpertById(@PathVariable("id") Integer id){
         return expertRepository.findById(id);
     }
 
-    @GetMapping("/expert/list")
+    @GetMapping()
     public Iterable<Expert> getAllExperts(){
         return expertRepository.findAll();
     }
 
-    @PostMapping("/expert")
+    @PostMapping()
     public Program addExpert(@RequestBody ExpertJsonRequest request){
         Expert newExpert = new Expert(request);
         expertRepository.save(newExpert);
         return newExpert;
     }
 
-    @DeleteMapping("/expert/{id}")
+    @DeleteMapping("/{id}")
     public void deleteExpertById(@PathVariable("id") Integer id){
         expertRepository.deleteById(id);
     }
