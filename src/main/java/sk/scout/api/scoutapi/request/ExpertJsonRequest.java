@@ -1,9 +1,18 @@
 package sk.scout.api.scoutapi.request;
 
 public class ExpertJsonRequest {
+    private String name;
     private String level;
     private String category;
     private String domain;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public String getLevel() {
         return level;
@@ -27,5 +36,15 @@ public class ExpertJsonRequest {
 
     public void setDomain(String domain) {
         this.domain = domain;
+    }
+
+    @Override
+    public String toString() {
+        return "ExpertJsonRequest{" +
+                "name='" + name + '\'' +
+                ", level='" + level + '\'' +
+                ", category='" + category + '\'' +
+                ", domain='" + domain + '\'' +
+                '}';
     }
 }
