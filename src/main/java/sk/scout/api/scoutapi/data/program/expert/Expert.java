@@ -5,7 +5,6 @@ import sk.scout.api.scoutapi.data.program.Program;
 import sk.scout.api.scoutapi.request.ExpertJsonRequest;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table(name = "expert")
@@ -26,27 +25,25 @@ public class Expert extends Program {
     private String category;
 
     @Nullable
-    @Column(name = "DOMAIN")
-    private String domain;
-
-    private List<ExpertTask> tasks;
+    @Column(name = "FOCUS")
+    private String focus;
 
     public Expert() {
     }
 
-    public Expert(Integer id, String name, String level, String category, String domain) {
+    public Expert(Integer id, String name, String level, String category, String focus) {
         this.id = id;
         this.name = name;
         this.level = level;
         this.category = category;
-        this.domain = domain;
+        this.focus = focus;
     }
 
     public Expert(ExpertJsonRequest request) {
         this.name = request.getName();
         this.level = request.getLevel();
         this.category = request.getCategory();
-        this.domain = request.getDomain();
+        this.focus = request.getFocus();
     }
 
     public Integer getId() {
@@ -81,11 +78,11 @@ public class Expert extends Program {
         this.category = category;
     }
 
-    public String getDomain() {
-        return domain;
+    public String getFocus() {
+        return focus;
     }
 
-    public void setDomain(String domain) {
-        this.domain = domain;
+    public void setFocus(String domain) {
+        this.focus = domain;
     }
 }

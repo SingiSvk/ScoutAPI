@@ -4,7 +4,7 @@ public class ExpertJsonRequest {
     private String name;
     private String level;
     private String category;
-    private String domain;
+    private String focus;
 
     public String getName() {
         return name;
@@ -30,12 +30,12 @@ public class ExpertJsonRequest {
         this.category = category;
     }
 
-    public String getDomain() {
-        return domain;
+    public String getFocus() {
+        return focus;
     }
 
-    public void setDomain(String domain) {
-        this.domain = domain;
+    public void setFocus(String focus) {
+        this.focus = focus;
     }
 
     @Override
@@ -44,7 +44,7 @@ public class ExpertJsonRequest {
                 "name='" + name + '\'' +
                 ", level='" + level + '\'' +
                 ", category='" + category + '\'' +
-                ", domain='" + domain + '\'' +
+                ", focus='" + focus + '\'' +
                 '}';
     }
 }
